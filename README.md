@@ -1,57 +1,58 @@
 # Grade Calculator CLI
 
-A simple Rust command-line application for calculating average scores and assigning letter grades.
+A Rust-powered command-line application that helps students quickly calculate grade averages and automatically determine final letter grades.
+
+---
+
+## Problem Statement
+
+Students often calculate academic averages manually using calculators or spreadsheets. This process can become repetitive, slow, and prone to errors.
+
+This project solves the problem by automating grade calculations directly from the command line using Rust.
+
+---
 
 ## Features
 
-* Calculate average scores
-* Assign letter grades automatically
-* Interactive command-line interface
-* Built using Rust
+* Input multiple scores
+* Automatic average calculation
+* Automatic letter grade assignment
+* Lightweight and fast
+* Simple command-line interface
+* Cross-platform Rust application
 
-## Project Structure
+---
 
-```text
-grade-calculator-cli/
-├── src/
-│   └── main.rs
-├── Cargo.toml
-├── Cargo.lock
-├── README.md
-├── LICENSE
-├── .gitignore
-└── index.html
-```
+## Technologies Used
 
-## Installation
+* Rust
+* Cargo
+* GitHub Actions
+* GitHub Pages
 
-Clone the repository:
+---
 
-```bash
-git clone git@github.com:Mosesoluwaseye/grade-calculator-cli.git
-```
+## How It Works
 
-Navigate into the project directory:
+The application asks users:
 
-```bash
-cd grade-calculator-cli
-```
+1. How many scores they want to enter
+2. Each score individually
 
-Build the project:
+It then:
 
-```bash
-cargo build
-```
+* Calculates the average
+* Displays the corresponding grade
 
-## Usage
+---
 
-Run the application:
+## Example Usage
 
 ```bash
 cargo run
 ```
 
-Example:
+Example Output:
 
 ```text
 How many scores do you want to enter?
@@ -70,22 +71,138 @@ Average score: 80.00
 Grade: B
 ```
 
-## Technologies Used
+---
 
-* Rust
-* Cargo
-* Git
-* GitHub Pages
+## Project Structure
 
-## Live Website
+```text
+grade-calculator-cli/
+│
+├── src/
+│   └── main.rs
+│
+├── .github/
+│   └── workflows/
+│       └── build.yml
+│
+├── assets/
+│   └── demo.png
+│
+├── Cargo.toml
+├── README.md
+├── LICENSE
+└── index.html
+```
 
-https://mosesoluwaseye.github.io/grade-calculator-cli/
+---
 
-## Author
+## Installation
 
-Oluwaseye Moses
+Clone the repository:
+
+```bash
+git clone https://github.com/Mosesoluwaseye/grade-calculator-cli.git
+```
+
+Move into the project directory:
+
+```bash
+cd grade-calculator-cli
+```
+
+Run the application:
+
+```bash
+cargo run
+```
+
+---
+
+## Build Release Binary
+
+```bash
+cargo build --release
+```
+
+Compiled binaries will be generated inside:
+
+```text
+target/release/
+```
+
+---
+
+## Target Users
+
+This tool is designed for:
+
+* University students
+* Teachers
+* Rust beginners
+* Developers learning command-line applications
+
+---
+
+## Marketing Strategy
+
+The application can be promoted through:
+
+* GitHub open-source communities
+* Student forums
+* Rust programming communities
+* Developer social media platforms
+* Technical blogging platforms
+
+---
+
+## Monetization Strategy
+
+Potential premium features could include:
+
+* GPA tracking
+* Semester analytics
+* Export to PDF or CSV
+* Grade history storage
+* Cloud synchronization
+
+---
+
+## GitHub Actions
+
+This project uses GitHub Actions to automatically build and cross-compile binaries for Linux platforms.
+
+---
+
+## GitHub Pages
+
+A GitHub Pages website is included to market the application and explain its purpose to users.
+
+---
+
+## Preview
+
+Add your application screenshot inside:
+
+```text
+assets/demo.png
+```
+
+Then it will appear below:
+
+![Preview](assets/demo.png)
+
+---
+
+## Future Improvements
+
+* Better input validation
+* GPA calculation
+* File export support
+* Interactive CLI menus
+* Semester performance tracking
+
+---
 
 ## License
 
 This project is licensed under the MIT License.
-
