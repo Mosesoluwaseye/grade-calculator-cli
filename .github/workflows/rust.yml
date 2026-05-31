@@ -3,28 +3,22 @@ name: Rust CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  build-linux-aarch64:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Add aarch64 target
-        run: rustup target add aarch64-unknown-linux-gnu
+      - name: Build Release
+        run: cargo build --release
 
-      - name: Build release binary
-        run: cargo build --release --target aarch64-unknown-linux-gnu
-
-      - name: Upload binary artifact
+      - name: Upload Binary
         uses: actions/upload-artifact@v4
         with:
-          name: grade-calculator-cli-aarch64
-          path: target/aarch64-unknown-linux-gnu/release/*
+          name: grade-calculator-cli-linux
+          path: target/release/grade_calculator_cli
