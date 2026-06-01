@@ -6,7 +6,7 @@ A Rust-powered command-line application that helps students quickly calculate gr
 
 ## Problem Statement
 
-Students often calculate academic averages manually using calculators or spreadsheets. This process can become repetitive, slow, and prone to errors.
+Students often calculate academic averages manually using calculators or spreadsheets. This process can be repetitive, slow, and prone to errors.
 
 This project solves the problem by automating grade calculations directly from the command line using Rust.
 
@@ -14,45 +14,49 @@ This project solves the problem by automating grade calculations directly from t
 
 ## Features
 
-* Input multiple scores
-* Automatic average calculation
-* Automatic letter grade assignment
-* Lightweight and fast
-* Simple command-line interface
-* Cross-platform Rust application
+- Input multiple scores
+- Automatic average calculation
+- Automatic letter grade assignment
+- Lightweight and fast
+- Simple command-line interface
+- Cross-platform Rust application
 
 ---
 
 ## Technologies Used
 
-* Rust
-* Cargo
-* GitHub Actions
-* GitHub Pages
+- Rust
+- Cargo
+- Git
+- GitHub
+- GitHub Actions
+- GitHub Pages
 
 ---
 
-## How It Works
+## Installation
 
-The application asks users:
+Clone the repository:
 
-1. How many scores they want to enter
-2. Each score individually
+```bash
+git clone https://github.com/Mosesoluwaseye/grade-calculator-cli.git
+```
 
-It then:
+Navigate into the project directory:
 
-* Calculates the average
-* Displays the corresponding grade
+```bash
+cd grade-calculator-cli
+```
 
----
-
-## Example Usage
+Run the application:
 
 ```bash
 cargo run
 ```
 
-Example Output:
+---
+
+## Example Usage
 
 ```text
 How many scores do you want to enter?
@@ -73,22 +77,31 @@ Grade: B
 
 ---
 
+## Skills Demonstrated
+
+- Rust Programming
+- User Input Handling
+- Conditional Logic
+- Looping and Iteration
+- Command-Line Application Development
+- Git Version Control
+- GitHub Actions
+- GitHub Pages
+- Technical Documentation
+
+---
+
 ## Project Structure
 
 ```text
-grade-calculator-cli/
-│
-├── src/
-│   └── main.rs
-│
+grade_calculator_cli/
 ├── .github/
 │   └── workflows/
-│       └── build.yml
-│
-├── assets/
-│   └── demo.png
-│
+│       └── rust.yml
+├── src/
+│   └── main.rs
 ├── Cargo.toml
+├── Cargo.lock
 ├── README.md
 ├── LICENSE
 └── index.html
@@ -96,110 +109,15 @@ grade-calculator-cli/
 
 ---
 
-## Installation
+## Live Demo
 
-Clone the repository:
+Project Website:
 
-```bash
-git clone https://github.com/Mosesoluwaseye/grade-calculator-cli.git
-```
+https://mosesoluwaseye.github.io/grade-calculator-cli/
 
-Move into the project directory:
+GitHub Repository:
 
-```bash
-cd grade-calculator-cli
-```
-
-Run the application:
-
-```bash
-cargo run
-```
-
----
-
-## Build Release Binary
-
-```bash
-cargo build --release
-```
-
-Compiled binaries will be generated inside:
-
-```text
-target/release/
-```
-
----
-
-## Target Users
-
-This tool is designed for:
-
-* University students
-* Teachers
-* Rust beginners
-* Developers learning command-line applications
-
----
-
-## Marketing Strategy
-
-The application can be promoted through:
-
-* GitHub open-source communities
-* Student forums
-* Rust programming communities
-* Developer social media platforms
-* Technical blogging platforms
-
----
-
-## Monetization Strategy
-
-Potential premium features could include:
-
-* GPA tracking
-* Semester analytics
-* Export to PDF or CSV
-* Grade history storage
-* Cloud synchronization
-
----
-
-## GitHub Actions
-
-This project uses GitHub Actions to automatically build and cross-compile binaries for Linux platforms.
-
----
-
-## GitHub Pages
-
-A GitHub Pages website is included to market the application and explain its purpose to users.
-
----
-
-## Preview
-
-Add your application screenshot inside:
-
-```text
-assets/demo.png
-```
-
-Then it will appear below:
-
-![Preview](assets/demo.png)
-
----
-
-## Future Improvements
-
-* Better input validation
-* GPA calculation
-* File export support
-* Interactive CLI menus
-* Semester performance tracking
+https://github.com/Mosesoluwaseye/grade-calculator-cli
 
 ---
 
