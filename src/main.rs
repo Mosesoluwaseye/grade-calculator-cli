@@ -12,7 +12,7 @@ fn main() {
     let file = File::open("grades.csv").unwrap();
 
     let mut rdr = csv::ReaderBuilder::new()
-        .has_headers(false)
+        .has_headers(true)
         .from_reader(file);
 
     let mut scores = Vec::new();
@@ -26,11 +26,19 @@ fn main() {
     for result in rdr.records() {
         let record = result.unwrap();
 
-        let score: f64 = record[0].parse().unwrap();
+        let student_id = &record[0];
+        let score: f64 = record[1].parse().unwrap();
 
         let percentage = (score / max_points) * 100.0;
 
         scores.push(percentage);
+
+        println!(
+            "Student: {} | Score: {} | Percentage: {:.2}%",
+            student_id,
+            score,
+            percentage
+        );
 
         if percentage >= 90.0 {
             a_count += 1;
@@ -48,7 +56,7 @@ fn main() {
     let sum: f64 = scores.iter().sum();
     let average = sum / scores.len() as f64;
 
-    println!("Average score: {:.2}", average);
+    println!("\nAverage score: {:.2}", average);
 
     if average >= 90.0 {
         println!("Grade: A");
@@ -68,4 +76,12 @@ fn main() {
     println!("C: {}", c_count);
     println!("D: {}", d_count);
     println!("F: {}", f_count);
+
+    println!("\nBar Chart");
+
+    println!("A: {}", "*".repeat(a_count));
+    println!("B: {}", "*".repeat(b_count));
+    println!("C: {}", "*".repeat(c_count));
+    println!("D: {}", "*".repeat(d_count));
+    println!("F: {}", "*".repeat(f_count));
 }
