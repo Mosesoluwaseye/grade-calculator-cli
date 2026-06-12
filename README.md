@@ -53,7 +53,7 @@ Navigate into the project directory:
 cd grade-calculator-cli
 ```
 
-Run the application:
+Install dependencies and run:
 
 ```bash
 cargo run
