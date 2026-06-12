@@ -1,36 +1,39 @@
 # Grade Calculator CLI
 
-A Rust-powered command-line application that helps students quickly calculate grade averages and automatically determine final letter grades.
+A Rust-powered command-line application that calculates grade averages from a CSV file, converts scores using different grading scales, assigns letter grades, and reports grade distributions.
 
 ---
 
 ## Problem Statement
 
-Students often calculate academic averages manually using calculators or spreadsheets. This process can be repetitive, slow, and prone to errors.
+Students and instructors often work with grade lists stored in spreadsheets or CSV files rather than entering grades manually. Calculating averages and determining final grades can be repetitive and error-prone.
 
-This project solves the problem by automating grade calculations directly from the command line using Rust.
+This project automates the process by reading grades from a CSV file, converting them to percentages based on a selected grading scale, calculating the average, assigning a letter grade, and reporting the grade distribution.
 
 ---
-
+x
 ## Features
 
-- Input multiple scores
-- Automatic average calculation
-- Automatic letter grade assignment
-- Lightweight and fast
-- Simple command-line interface
-- Cross-platform Rust application
+* Read grades from a CSV file
+* Support grading scales of 60, 70, 80, 90, and 100 points
+* Calculate average scores automatically
+* Convert scores to percentages
+* Assign letter grades automatically
+* Report grade distribution (A, B, C, D, F)
+* Simple command-line interface
+* Built with Rust
 
 ---
 
 ## Technologies Used
 
-- Rust
-- Cargo
-- Git
-- GitHub
-- GitHub Actions
-- GitHub Pages
+* Rust
+* Cargo
+* CSV Crate
+* Git
+* GitHub
+* GitHub Actions
+* GitHub Pages
 
 ---
 
@@ -48,7 +51,7 @@ Navigate into the project directory:
 cd grade-calculator-cli
 ```
 
-Run the application:
+Install dependencies and run:
 
 ```bash
 cargo run
@@ -56,38 +59,56 @@ cargo run
 
 ---
 
+## CSV Format
+
+Create a file named:
+
+```text
+grades.csv
+```
+
+Example:
+
+```csv
+54
+56
+52
+```
+
+Each line represents a student's score.
+
+---
+
 ## Example Usage
 
 ```text
-How many scores do you want to enter?
-3
+Enter maximum points (60, 70, 80, 90, 100):
+60
 
-Enter score 1:
-70
+Average score: 90.00
+Grade: A
 
-Enter score 2:
-80
-
-Enter score 3:
-90
-
-Average score: 80.00
-Grade: B
+Grade Distribution
+A: 2
+B: 1
+C: 0
+D: 0
+F: 0
 ```
 
 ---
 
 ## Skills Demonstrated
 
-- Rust Programming
-- User Input Handling
-- Conditional Logic
-- Looping and Iteration
-- Command-Line Application Development
-- Git Version Control
-- GitHub Actions
-- GitHub Pages
-- Technical Documentation
+* Rust Programming
+* File Handling
+* CSV Processing
+* User Input Handling
+* Data Processing
+* Conditional Logic
+* Command-Line Application Development
+* Git Version Control
+* Technical Documentation
 
 ---
 
@@ -95,16 +116,14 @@ Grade: B
 
 ```text
 grade_calculator_cli/
-├── .github/
-│   └── workflows/
-│       └── rust.yml
 ├── src/
 │   └── main.rs
+├── grades.csv
 ├── Cargo.toml
 ├── Cargo.lock
 ├── README.md
-├── LICENSE
-└── index.html
+└── .github/
+    └── workflows/
 ```
 
 ---
@@ -121,6 +140,16 @@ https://github.com/Mosesoluwaseye/grade-calculator-cli
 
 ---
 
+## Professor Feedback Implemented
+
+* Added support for grading scales of 60, 70, 80, 90, and 100 points
+* Added CSV file input support
+* Added grade distribution reporting
+* Removed the need for manual score entry
+
+---
+
 ## License
 
 This project is licensed under the MIT License.
+
