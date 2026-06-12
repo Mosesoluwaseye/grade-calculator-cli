@@ -1,30 +1,62 @@
+use std::fs::File;
 use std::io;
 
 fn main() {
+    println!("Enter maximum points (60, 70, 80, 90, 100):");
+
+    let mut max_input = String::new();
+    io::stdin().read_line(&mut max_input).unwrap();
+
+    let max_points: f64 = max_input.trim().parse().unwrap();
+
+    let file = File::open("grades.csv").unwrap();
+
+    let mut rdr = csv::ReaderBuilder::new()
+        .has_headers(true)
+        .from_reader(file);
+
     let mut scores = Vec::new();
 
-    println!("How many scores do you want to enter?");
+    let mut a_count = 0;
+    let mut b_count = 0;
+    let mut c_count = 0;
+    let mut d_count = 0;
+    let mut f_count = 0;
 
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
+    for result in rdr.records() {
+        let record = result.unwrap();
 
-    let count: usize = input.trim().parse().unwrap();
+        let student_id = &record[0];
+        let score: f64 = record[1].parse().unwrap();
 
-    for i in 1..=count {
-        println!("Enter score {}:", i);
+        let percentage = (score / max_points) * 100.0;
 
-        let mut score_input = String::new();
-        io::stdin().read_line(&mut score_input).unwrap();
+        scores.push(percentage);
 
-        let score: f64 = score_input.trim().parse().unwrap();
+        println!(
+            "Student: {} | Score: {} | Percentage: {:.2}%",
+            student_id,
+            score,
+            percentage
+        );
 
-        scores.push(score);
+        if percentage >= 90.0 {
+            a_count += 1;
+        } else if percentage >= 80.0 {
+            b_count += 1;
+        } else if percentage >= 70.0 {
+            c_count += 1;
+        } else if percentage >= 60.0 {
+            d_count += 1;
+        } else {
+            f_count += 1;
+        }
     }
 
     let sum: f64 = scores.iter().sum();
     let average = sum / scores.len() as f64;
 
-    println!("Average score: {:.2}", average);
+    println!("\nAverage score: {:.2}", average);
 
     if average >= 90.0 {
         println!("Grade: A");
@@ -37,4 +69,19 @@ fn main() {
     } else {
         println!("Grade: F");
     }
+
+    println!("\nGrade Distribution");
+    println!("A: {}", a_count);
+    println!("B: {}", b_count);
+    println!("C: {}", c_count);
+    println!("D: {}", d_count);
+    println!("F: {}", f_count);
+
+    println!("\nBar Chart");
+
+    println!("A: {}", "*".repeat(a_count));
+    println!("B: {}", "*".repeat(b_count));
+    println!("C: {}", "*".repeat(c_count));
+    println!("D: {}", "*".repeat(d_count));
+    println!("F: {}", "*".repeat(f_count));
 }
